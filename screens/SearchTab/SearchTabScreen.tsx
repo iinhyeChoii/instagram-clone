@@ -1,11 +1,11 @@
 import { RootTabScreenProps } from '../../types';
 import { Container, Title } from '../../components/CommonStyledComponents';
-export default function TabThreeScreen({
+export default function SearchTabScreen({
   navigation,
-}: RootTabScreenProps<'TabThree'>) {
+}: RootTabScreenProps<'SearchTab'>) {
   return (
     <Container>
-      <Title>Tab Three Screen</Title>
+      <Title>Search Tab Screen</Title>
     </Container>
   );
 }

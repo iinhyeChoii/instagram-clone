@@ -1,4 +1,4 @@
-# React Native Template: Expo
+# Instagram UI Clone Project with React Native Expo + TypeScript
 ## 💁 Intro
 새로운 프로젝트를 빠르게 시작하기 위한 React Native 스타터 키트입니다.
 
@@ -32,6 +32,7 @@
 ```bash
 git clone https://github.com/iinhyeChoii/react-native-template-expo.git
 cd react-native-template-expo
+yarn
 npx expo start
 i # iOS
 a # android

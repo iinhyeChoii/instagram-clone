@@ -1,11 +1,11 @@
 import { RootTabScreenProps } from '../../types';
 import { Container, Title } from '../../components/CommonStyledComponents';
-export default function TabTwoScreen({
+export default function ReelsTabScreen({
   navigation,
-}: RootTabScreenProps<'TabTwo'>) {
+}: RootTabScreenProps<'ReelsTab'>) {
   return (
     <Container>
-      <Title>Tab Two Screen</Title>
+      <Title>Reels Tab Screen</Title>
     </Container>
   );
 }
