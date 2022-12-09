@@ -1,9 +1,6 @@
-# Instagram UI Clone Project with React Native Expo + TypeScript
-## 💁 Intro
-새로운 프로젝트를 빠르게 시작하기 위한 React Native 스타터 키트입니다.
-
+# Instagram Clone Project with React Native Expo + TypeScript
 ## 💻 Tech Stack
-| 라이브러리             | 카테고리           |
+| Library           | Category       |
 |-------------------|----------------|
 | React Native      | 모바일 프레임워크      |
 | TypeScript        | 언어             |
@@ -27,11 +24,10 @@
 
 
 ## 🚀 Getting started
-사용 중인 IDE에 ``eslint``, ``prettier`` 플러그인을 미리 설치해주세요.
 
 ```bash
-git clone https://github.com/iinhyeChoii/react-native-template-expo.git
-cd react-native-template-expo
+git clone https://github.com/iinhyeChoii/instagram-clone.git
+cd instagram-clone 
 yarn
 npx expo start
 i # iOS
