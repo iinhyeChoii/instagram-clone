@@ -1,5 +1,5 @@
 import { RootTabScreenProps } from '../../types';
-import { Container, Title } from '../../components/CommonStyledComponents';
+import { Container, Title } from '../../components/styles';
 export default function ReelsTabScreen({
   navigation,
 }: RootTabScreenProps<'ReelsTab'>) {
