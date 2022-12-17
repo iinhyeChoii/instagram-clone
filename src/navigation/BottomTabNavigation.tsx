@@ -12,7 +12,9 @@ import ReelsTabScreen from '../screens/ReelsTab/ReelsTabScreen';
 import ShopTabScreen from '../screens/ShopTab/ShopTabScreen';
 import ProfileTabScreen from '../screens/ProfileTab/ProfileTabScreen';
 
-import { FontAwesome } from '@expo/vector-icons';
+import { Icon } from '../components';
+import { IconSourceTypes } from '../interfaces';
+import { Icons } from '../assets';
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -28,12 +30,12 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="HomeTab"
       screenOptions={{
-        tabBarActiveTintColor: isDarkMode
-          ? darkTheme.colors.tabIconSelected
-          : lightTheme.colors.tabIconSelected,
-        tabBarInactiveTintColor: isDarkMode
-          ? darkTheme.colors.tabIconDefault
-          : lightTheme.colors.tabIconDefault,
+        // tabBarActiveTintColor: isDarkMode
+        //   ? darkTheme.colors.tabIconSelected
+        //   : lightTheme.colors.tabIconSelected,
+        // tabBarInactiveTintColor: isDarkMode
+        //   ? darkTheme.colors.tabIconDefault
+        //   : lightTheme.colors.tabIconDefault,
         tabBarShowLabel: false,
         headerStyle: {
           backgroundColor: isDarkMode
@@ -54,21 +56,23 @@ export default function BottomTabNavigator() {
         name="HomeTab"
         component={HomeTabScreen}
         options={({ navigation }: RootTabScreenProps<'HomeTab'>) => ({
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon iconSource={focused ? Icons.HomeFilled : Icons.Home} />
+          ),
         })}
       />
       <BottomTab.Screen
         name="SearchTab"
         component={SearchTabScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon iconSource={Icons.Search} />,
         }}
       />
       <BottomTab.Screen
         name="ReelsTab"
         component={ReelsTabScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="film" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon iconSource={Icons.Film} />,
         }}
       />
       <BottomTab.Screen
@@ -76,7 +80,7 @@ export default function BottomTabNavigator() {
         component={ShopTabScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="shopping-bag" color={color} />
+            <TabBarIcon iconSource={Icons.ShoppingCart} />
           ),
         }}
       />
@@ -84,19 +88,17 @@ export default function BottomTabNavigator() {
         name="ProfileTab"
         component={ProfileTabScreen}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon iconSource={focused ? Icons.UserFilled : Icons.User} />
+          ),
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
+  iconSource: IconSourceTypes; // color: string;
 }) {
-  return <FontAwesome size={25} style={{ marginBottom: -3 }} {...props} />;
+  return <Icon {...props} />;
 }

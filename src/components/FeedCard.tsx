@@ -6,8 +6,6 @@ import {
   UserName,
   FeedImage,
   NumberOfLikes,
-  FeedCaption,
-  UploadedTimeInfo,
 } from './styles';
 import { FeedInterface } from '../interfaces';
 import DetailsDesc from './DetailsDesc';
@@ -41,7 +39,7 @@ const FeedCard = ({ data }: { data: FeedInterface }) => {
         <Row>
           {/*Like button, Comment button, Message Button, Bookmark button*/}
           <IconButton
-            iconSource={Icons.Add}
+            iconSource={Icons.Heart}
             onPress={() => {
               console.log('Hi');
             }}
